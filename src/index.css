@@ -1,0 +1,680 @@
+:root {
+  --bg-primary: #1A1A2E;
+  --bg-page: #FF69B4;
+  --accent-yellow: #FFE156;
+  --accent-pink: #FF5CA8;
+  --accent-blue: #7B8CFF;
+  --accent-white: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-dark: #1A1A2E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+  position: relative;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ===== Section Common ===== */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Cards ===== */
+.card {
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: visible;
+}
+.card--standard {
+  background: var(--accent-white);
+  border: 2px solid var(--text-dark);
+  color: var(--text-dark);
+}
+.card--yellow {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+}
+.card--pink {
+  background: var(--accent-pink);
+  color: var(--accent-white);
+}
+.card--blue {
+  background: var(--accent-blue);
+  color: var(--accent-white);
+}
+.card--outlined {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.3);
+  color: var(--text-primary);
+  transition: border-color 0.3s, background 0.3s;
+}
+.card--outlined:hover {
+  border-color: var(--accent-yellow);
+  background: rgba(255,255,255,0.08);
+}
+
+
+/* ===== Notebook Card ===== */
+.card--notebook {
+  background: var(--accent-white);
+  border: 2px solid var(--text-dark);
+  color: var(--text-dark);
+}
+.notebook-dots {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.notebook-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-dark);
+}
+.notebook-dots .dot--hollow {
+  background: transparent;
+  border: 2px solid var(--text-dark);
+}
+
+/* ===== Sticker Card ===== */
+.card--sticker {
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 4px 4px 0px var(--text-dark);
+}
+.card--sticker.yellow { background: var(--accent-yellow); color: var(--text-dark); }
+.card--sticker.pink { background: var(--accent-pink); color: var(--accent-white); }
+
+/* ===== Emoji Sticker ===== */
+.emoji-sticker {
+  position: absolute;
+  font-size: 36px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ===== Highlight Marker ===== */
+.highlight {
+  background: var(--accent-yellow);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+.highlight--pink {
+  background: var(--accent-pink);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--accent-white);
+  font-weight: 700;
+}
+
+/* ===== Typography ===== */
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.body-text {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.caption {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* ===== Grid ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ===== Dashed Divider ===== */
+.dashed-divider {
+  display: none;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-block;
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--text-dark);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--text-dark);
+}
+
+/* ===== Iceberg ===== */
+.iceberg-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.iceberg-top {
+  width: 60%;
+  padding: 24px 32px;
+  background: var(--accent-blue);
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  color: var(--accent-white);
+  font-weight: 700;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+}
+.iceberg-waterline {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  position: relative;
+}
+.iceberg-waterline::before {
+  content: '〰️ 수면 〰️';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: var(--accent-blue);
+  white-space: nowrap;
+}
+.iceberg-bottom {
+  width: 90%;
+  padding: 48px 32px;
+  background: linear-gradient(180deg, #2a2a4a 0%, #1A1A2E 100%);
+  border-radius: 0 0 20px 20px;
+  border: 2px solid rgba(123,140,255,0.3);
+  border-top: none;
+  text-align: center;
+  color: var(--accent-white);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ===== Pillar Number Badge ===== */
+.pillar-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--accent-white);
+  background: var(--text-dark);
+  box-shadow: 3px 3px 0px rgba(255,255,255,0.3);
+  transform: rotate(-2deg);
+  width: fit-content;
+}
+
+/* ===== Quote Block ===== */
+.quote-block {
+  border-left: 4px solid var(--accent-yellow);
+  padding: 16px 24px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255,225,86,0.08);
+  border-radius: 0 12px 12px 0;
+}
+
+/* ===== Purpose List ===== */
+.purpose-list {
+  list-style: none;
+  padding: 0;
+}
+.purpose-list li {
+  padding: 12px 0;
+  font-size: 17px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.purpose-list li .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 32px; }
+  .section-title { font-size: 24px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .page-wrapper { padding: 24px 16px; }
+  .iceberg-top { width: 80%; }
+  .iceberg-bottom { width: 100%; }
+}
+
+
+/* ===== Hero Section ===== */
+.hero-section {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title--center {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  margin-bottom: 56px;
+}
+.hero-title--accent {
+  color: var(--accent-yellow);
+}
+.hero-title--pink {
+  color: var(--accent-pink);
+}
+
+/* 반짝이 장식 */
+.sparkle {
+  position: absolute;
+  color: var(--accent-white);
+  font-size: 28px;
+  opacity: 0.9;
+  animation: sparkle-pulse 2s ease-in-out infinite;
+}
+.sparkle--1 {
+  top: 25%;
+  left: 8%;
+  font-size: 32px;
+}
+.sparkle--2 {
+  top: 40%;
+  left: 12%;
+  font-size: 20px;
+  animation-delay: 0.5s;
+}
+.sparkle--3 {
+  top: 32%;
+  left: 5%;
+  font-size: 16px;
+  animation-delay: 1s;
+}
+@keyframes sparkle-pulse {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* 슬래시 장식 (우측 상단) */
+.hero-slash {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  display: flex;
+  gap: 4px;
+  transform: rotate(-20deg);
+}
+.hero-slash span {
+  color: var(--accent-white);
+  font-size: 28px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* 배경 곡선 */
+.hero-deco-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-arc {
+  position: absolute;
+  width: 120%;
+  left: -10%;
+}
+.hero-arc--1 {
+  bottom: 10%;
+}
+.hero-arc--2 {
+  bottom: 5%;
+}
+
+/* 하단 바 */
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 40px;
+}
+.hero-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-dots {
+  display: flex;
+  gap: 6px;
+}
+.hero-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.hero-dot--filled {
+  background: var(--accent-white);
+}
+.hero-dot--outline {
+  background: transparent;
+  border: 2px solid var(--accent-white);
+}
+.hero-bottom-caption {
+  font-size: 14px;
+  color: var(--text-primary);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* 핑크 스티커 배지 */
+.hero-sticker-badge {
+  background: var(--accent-pink);
+  color: var(--accent-white);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(1deg);
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-title--center { font-size: 40px; }
+  .hero-section { padding: 40px 0; }
+  .hero-bottom { flex-direction: column; gap: 20px; }
+  .sparkle--1, .sparkle--2, .sparkle--3 { display: none; }
+  .hero-slash { display: none; }
+}
+
+
+/* ===== Hero Purpose (compact) ===== */
+.hero-purpose-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.hero-purpose {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+.hero-purpose-item {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+.hero-purpose-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,92,168,0.25);
+  color: var(--accent-pink);
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* ===== Notebook Spread (스프링 노트 비교) ===== */
+.notebook-spread {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr;
+  background: var(--text-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 스프링 바인딩 */
+.notebook-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 0;
+  width: 32px;
+  background: var(--text-dark);
+  position: relative;
+  z-index: 2;
+}
+.spine-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #111;
+  border: 3px solid #444;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8), 0 1px 2px rgba(255,255,255,0.1);
+}
+
+/* 페이지 공통 */
+.notebook-page {
+  background: var(--accent-white);
+  color: var(--text-dark);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.notebook-page--left {
+  border-right: none;
+}
+.notebook-page--right {
+  border-left: none;
+}
+
+/* 배지 */
+.notebook-page-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent-white);
+  width: fit-content;
+}
+.notebook-page-badge--blue {
+  background: var(--accent-blue);
+}
+.notebook-page-badge--pink {
+  background: var(--accent-pink);
+}
+
+/* 리스트 */
+.notebook-page-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.notebook-page-list li {
+  font-size: 15px;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: var(--accent-white);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.check-icon--pink {
+  background: var(--accent-pink);
+}
+
+/* 하단 결론 */
+.notebook-page-bottom {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 2px dashed rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.notebook-verdict {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  padding: 4px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 2px 2px 0px var(--text-dark);
+  flex-shrink: 0;
+}
+.notebook-verdict-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .notebook-spread {
+    grid-template-columns: 1fr;
+  }
+  .notebook-spine {
+    flex-direction: row;
+    width: 100%;
+    height: 32px;
+    padding: 0 24px;
+    gap: 10px;
+  }
+  .notebook-page--left {
+    border-right: none;
+    border-bottom: none;
+  }
+  .notebook-page--right {
+    border-left: none;
+  }
+}
+
+
+/* ===== Slide Indicator ===== */
+.slide-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+.slide-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+.slide-dot--active {
+  background: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  transform: scale(1.3);
+}
+.slide-dot:hover {
+  border-color: var(--accent-yellow);
+}
