@@ -33,18 +33,21 @@ export default function WhySection() {
             width: 'fit-content',
           }}>Axure / Figma</span>
           <p style={{ fontSize: 13, opacity: 0.5, margin: 0, fontWeight: 600 }}>
-            "정적 이미지와 텍스트의 늪"
+            "한땀한땀 그려야 하는 수작업의 늪"
           </p>
 
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
             <WhyItem color="var(--accent-blue)">
-              인터랙션은 화려하나 본질은 <strong>'가짜 로직(Pseudo-code)'</strong>
+              화면 하나하나를 기획자가 직접 그리고 <strong>인터랙션을 수동으로 연결</strong>해야 함
             </WhyItem>
             <WhyItem color="var(--accent-blue)">
-              상태(State)와 비즈니스 로직을 구구절절 텍스트로 설명해야 함
+              인터랙션은 화려하나 본질은 개발이 불가능한 <strong>'가짜 로직(Pseudo-code)'</strong>
             </WhyItem>
             <WhyItem color="var(--accent-blue)">
-              기획서 자체가 개발을 위한 데이터나 코드가 되지 못함
+              상태(State)와 비즈니스 로직을 구구절절 <strong>텍스트로 설명</strong>하는 데 시간 소모
+            </WhyItem>
+            <WhyItem color="var(--accent-blue)">
+              기획 산출물 자체가 개발을 위한 데이터나 <strong>코드로 치환되지 못함</strong>
             </WhyItem>
           </ul>
 
@@ -113,13 +116,16 @@ export default function WhySection() {
 
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
             <WhyItem color="var(--accent-pink)">
-              비주얼은 뽑아주지만 인터랙션과 깊은 로직은 담지 못함
+              비주얼은 그럴싸하게 뽑아주지만 <strong>인터랙션과 깊은 비즈니스 로직</strong>은 담지 못함
             </WhyItem>
             <WhyItem color="var(--accent-pink)">
-              우리는 단순한 '그림'이 아니라 복잡한 <span className="highlight--pink">'솔루션'</span>을 만드는 팀
+              AI가 생성한 결과물을 받아도 결국 개발자가 <strong>DOM 구조부터 다시 설계</strong>해야 함
             </WhyItem>
             <WhyItem color="var(--accent-pink)">
-              결과물을 받아도 개발자가 DOM 구조부터 다시 설계해야 함
+              단순한 '그림' 그리기에는 최적화되어 있으나, 복잡한 <span className="highlight--pink">'솔루션'</span>에는 부적합
+            </WhyItem>
+            <WhyItem color="var(--accent-pink)">
+              기획과 개발 사이의 <strong>'번역 및 재구축' 과정이 전혀 단축되지 않음</strong>
             </WhyItem>
           </ul>
 
@@ -133,38 +139,48 @@ export default function WhySection() {
           }}>
             <span className="notebook-verdict">결론</span>
             <span style={{ fontSize: 13, fontWeight: 600, opacity: 0.65 }}>
-              개발자의 '번역 및 재구축' 과정이 전혀 단축되지 않음
+              표면적 AI일 뿐, 근본적 비효율은 그대로
             </span>
           </div>
         </div>
       </div>
 
       {/* 하단 Pain Point */}
-      <div style={{
-        marginTop: 32,
-        background: 'rgba(255,92,168,0.1)',
-        border: '2px solid var(--accent-pink)',
-        borderRadius: 16,
-        padding: '24px 28px',
-        display: 'flex',
-        gap: 24,
-      }}>
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--accent-pink)', marginBottom: 6 }}>
-            💬 현장의 목소리
-          </div>
-          <p style={{ fontSize: 14, lineHeight: 1.7, margin: 0, color: 'var(--text-primary)' }}>
-            "디자이너·퍼블리셔의 부재가 곧 프론트엔드 개발자의 <strong>독박 코딩</strong>으로 이어지는 구조"
-          </p>
+      <div style={{ marginTop: 32 }}>
+        <div style={{
+          display: 'inline-block',
+          background: 'var(--text-dark)',
+          color: 'var(--accent-white)',
+          padding: '8px 20px',
+          borderRadius: 8,
+          fontSize: 14,
+          fontWeight: 800,
+          marginBottom: 16,
+          boxShadow: '3px 3px 0px rgba(255,255,255,0.2)',
+          transform: 'rotate(-1deg)',
+        }}>
+          😱 핵심 Pain Point
         </div>
-        <div style={{ width: 2, background: 'rgba(255,92,168,0.3)', flexShrink: 0 }} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--accent-pink)', marginBottom: 6 }}>
-            📉 비즈니스 임팩트
+
+        <div className="card card--pink" style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span style={{ fontSize: 20, flexShrink: 0 }}>💬</span>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 800, opacity: 0.7, marginBottom: 4 }}>현장의 목소리</div>
+              <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, fontWeight: 600 }}>
+                "디자이너·퍼블리셔의 부재가 곧 프론트엔드 개발자의 <strong>독박 코딩</strong>으로 이어지는 구조"
+              </p>
+            </div>
           </div>
-          <p style={{ fontSize: 14, lineHeight: 1.7, margin: 0, color: 'var(--text-primary)' }}>
-            "기획과 개발 사이의 막대한 <strong>번역 비용</strong>이 전체 프로덕트 속도를 저해"
-          </p>
+          <div style={{ borderTop: '2px dashed rgba(255,255,255,0.2)', paddingTop: 16, display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span style={{ fontSize: 20, flexShrink: 0 }}>📉</span>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 800, opacity: 0.7, marginBottom: 4 }}>비즈니스 임팩트</div>
+              <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, fontWeight: 600 }}>
+                "기획과 개발 사이의 막대한 <strong>번역 비용</strong>이 전체 프로덕트 속도를 저해"
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

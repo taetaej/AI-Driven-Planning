@@ -7,16 +7,23 @@ export default function IcebergSection() {
 
       {/* 인용 블록 */}
       <div style={{
-        background: 'var(--accent-yellow)',
-        borderRadius: 16,
-        padding: '16px 28px',
-        marginBottom: 48,
-        maxWidth: 600,
+        marginBottom: 40,
         textAlign: 'center',
-        boxShadow: '4px 4px 0px var(--text-dark)',
+        maxWidth: 700,
       }}>
-        <p style={{ fontSize: 17, fontWeight: 700, color: 'var(--text-dark)', margin: 0 }}>
-          🚨 "실망스러우시겠지만, '뚝딱' 만들어지는 마법은 없습니다."
+        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', margin: '0 0 8px', fontWeight: 600 }}>
+          🚨 실망주의
+        </p>
+        <p style={{
+          fontSize: 36,
+          fontWeight: 900,
+          color: 'var(--accent-white)',
+          margin: 0,
+          lineHeight: 1.3,
+        }}>
+          "<span style={{ color: 'var(--accent-yellow)' }}>뚝딱</span> 만들어주는
+          <br />
+          마법 지팡이는 없다."
         </p>
       </div>
 
@@ -24,29 +31,28 @@ export default function IcebergSection() {
       <div style={{ position: 'relative', width: '100%', maxWidth: 700 }}>
         <svg viewBox="0 0 520 480" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%' }}>
           {/* 하늘 */}
-          <rect width="520" height="200" fill="#1A1A2E" />
+          <rect width="520" height="160" fill="#1A1A2E" />
 
           {/* 바다 위 (연한 블루) */}
-          <rect y="200" width="520" height="280" fill="#2a3a5c" />
+          <rect y="160" width="520" height="320" fill="#2a3a5c" />
 
           {/* 바다 물결 레이어 */}
-          <path d="M0 220 Q65 200 130 220 T260 220 T390 220 T520 220 V480 H0 Z" fill="#1e3050" opacity="0.5" />
-          <path d="M0 240 Q65 225 130 240 T260 240 T390 240 T520 240 V480 H0 Z" fill="#162540" opacity="0.4" />
+          <path d="M0 180 Q65 160 130 180 T260 180 T390 180 T520 180 V480 H0 Z" fill="#1e3050" opacity="0.5" />
+          <path d="M0 200 Q65 185 130 200 T260 200 T390 200 T520 200 V480 H0 Z" fill="#162540" opacity="0.4" />
 
           {/* 수면선 */}
-          <path d="M0 200 Q40 190 80 200 T160 200 T240 200 T320 200 T400 200 T480 200 T520 200" stroke="var(--accent-blue)" strokeWidth="2.5" fill="none" opacity="0.7" />
+          <path d="M0 160 Q40 150 80 160 T160 160 T240 160 T320 160 T400 160 T480 160 T520 160" stroke="var(--accent-blue)" strokeWidth="2.5" fill="none" opacity="0.7" />
 
-          {/* 빙산 수면 위 (밝은 흰색/하늘색) */}
-          <polygon points="260,60 200,140 180,195 340,195 320,140" fill="#e8f4f8" />
-          <polygon points="260,60 280,100 320,140 340,195 260,195 260,60" fill="#d0e8f0" />
-          <polygon points="260,60 240,90 230,130 200,140 180,195 260,195" fill="#f0f8fc" />
-          {/* 빙산 꼭대기 하이라이트 */}
-          <polygon points="260,60 250,90 270,85" fill="#ffffff" opacity="0.8" />
+          {/* 빙산 수면 위 (작게) */}
+          <polygon points="260,120 235,155 225,158 295,158 285,155" fill="#e8f4f8" />
+          <polygon points="260,120 275,140 285,155 295,158 260,158" fill="#d0e8f0" />
+          <polygon points="260,120 245,138 235,155 225,158 260,158" fill="#f0f8fc" />
+          <polygon points="260,120 255,135 268,133" fill="#ffffff" opacity="0.8" />
 
-          {/* 빙산 수면 아래 (어두운 블루) */}
-          <polygon points="170,205 140,280 180,380 260,440 340,380 380,280 350,205" fill="#3a6b8c" />
-          <polygon points="260,205 350,205 380,280 340,380 260,440" fill="#2d5570" />
-          <polygon points="260,205 170,205 140,280 180,380 260,440" fill="#4a7d9c" />
+          {/* 빙산 수면 아래 (크게) */}
+          <polygon points="215,165 160,260 180,380 260,450 340,380 360,260 305,165" fill="#3a6b8c" />
+          <polygon points="260,165 305,165 360,260 340,380 260,450" fill="#2d5570" />
+          <polygon points="260,165 215,165 160,260 180,380 260,450" fill="#4a7d9c" />
         </svg>
 
         {/* 수면 위 라벨 */}

@@ -23,10 +23,12 @@ export default function HeroSection() {
 
       {/* 메인 타이틀 */}
       <h1 className="hero-title hero-title--center">
-        AI로 하는 기획
+        <span style={{ fontSize: '1.3em' }}>AI로 하는 기획</span>
         <br />
-        <span className="hero-title--accent">생산성 향상</span>과{' '}
-        <span className="hero-title--pink">FE 협업</span> 사례
+        <span style={{ fontSize: '0.55em', fontWeight: 600, opacity: 0.7 }}>
+          <span className="hero-title--accent">생산성 향상</span>과{' '}
+          <span className="hero-title--pink">FE 협업</span> 사례
+        </span>
       </h1>
 
       {/* 하단 바 */}
