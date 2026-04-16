@@ -15,7 +15,7 @@ export default function OutroSection() {
       }}>
         패널 인터뷰를 통한
         <br />
-        <span style={{ color: 'var(--accent-yellow)' }}>삽질 사례</span> 공유 🎤
+        <span style={{ color: 'var(--accent-yellow)' }}>삽질로 얻어낸 꿀팁</span> 공유 🎤
       </h2>
 
       <div style={{ display: 'flex', gap: 24, justifyContent: 'center' }}>
